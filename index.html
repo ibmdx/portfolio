@@ -1,543 +1,410 @@
 <!DOCTYPE html>
-<html  >
+<html lang="en">
 <head>
-  <!-- Site made with Mobirise Website Builder v4.12.3, https://mobirise.com -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v4.12.3, mobirise.com">
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:image:src" content="assets/images/index-meta.jpg">
-  <meta property="og:image" content="assets/images/index-meta.jpg">
-  <meta name="twitter:title" content="Mobin M. Bahrami - BMDX — Product Designer">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/android-chrome-512x512.png" type="image/x-icon">
-  <meta name="description" content="A product designer who subscribes to the belief that design should be purposeful, functional, and relevant to its original intention.">
-  
-  
-  <title>Mobin M. Bahrami — BMDX — Product Designer</title>
-  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
-  <link rel="stylesheet" href="assets/facebook-plugin/style.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/tether/tether.min.css">
-  <link rel="stylesheet" href="assets/socicon/css/styles.css">
-  <link rel="stylesheet" href="assets/animatecss/animate.min.css">
-  <link rel="stylesheet" href="assets/dropdown/css/style.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  
-  
-  
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Mobin Bahrami — BMDX · Product Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,300&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0a;--bg2:#111;
+  --fg:#f0ede8;--fg2:#888;--fg3:#555;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:'Inter',sans-serif;font-size:15px;line-height:1.6;overflow-x:hidden;cursor:none}
+
+#cursor{position:fixed;width:10px;height:10px;background:var(--fg);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s}
+#cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(240,237,232,.35);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,opacity .3s}
+#cursor.hover{width:6px;height:6px}
+#cursor-ring.hover{width:56px;height:56px;border-color:rgba(240,237,232,.5)}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:2rem 4rem;mix-blend-mode:difference}
+.nav-logo{font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;color:#fff;text-decoration:none}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;transition:color .3s}
+.nav-links a:hover{color:#fff}
+
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:3rem 4rem 4rem;position:relative;overflow:hidden}
+.hero-bg-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:22vw;font-weight:600;color:rgba(255,255,255,.018);letter-spacing:-.05em;white-space:nowrap;pointer-events:none;user-select:none}
+.hero-eyebrow{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--fg2);margin-bottom:1.5rem;opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,8vw,7rem);font-weight:400;line-height:1;letter-spacing:-.02em;margin-bottom:2rem;overflow:hidden}
+.hero-title .line{display:block;opacity:0;transform:translateY(110%);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.hero-title .line em{font-style:italic;font-weight:300}
+.hero-meta{display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.hero-desc{font-size:.85rem;color:var(--fg2);max-width:340px;line-height:1.7}
+.hero-desc strong{color:rgba(240,237,232,.75);font-weight:400}
+.hero-scroll{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--fg3);display:flex;align-items:center;gap:.75rem}
+.scroll-line{width:48px;height:1px;background:var(--fg3);display:inline-block;transition:width .4s var(--ease)}
+.hero-scroll:hover .scroll-line{width:72px}
+.loaded .hero-eyebrow,.loaded .hero-meta{opacity:1;transform:none}
+.loaded .hero-title .line{opacity:1;transform:none}
+.loaded .hero-title .line:nth-child(1){transition-delay:.1s}
+.loaded .hero-title .line:nth-child(2){transition-delay:.22s}
+
+.marquee-wrap{border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);padding:.75rem 0;overflow:hidden;white-space:nowrap}
+.marquee-inner{display:inline-flex;gap:4rem;animation:marquee 22s linear infinite}
+.marquee-item{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--fg3)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+section{padding:8rem 4rem}
+.section-label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--fg3);margin-bottom:4rem;display:flex;align-items:center;gap:1rem}
+.section-label::before{content:'';width:24px;height:1px;background:var(--fg3)}
+
+/* ── Selected Works (2-col) ── */
+.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.07)}
+.project-card{background:var(--bg);overflow:hidden;position:relative;aspect-ratio:4/3;display:flex;flex-direction:column;justify-content:flex-end;cursor:none;text-decoration:none;color:inherit}
+.project-card.featured{grid-column:span 2;aspect-ratio:16/7}
+
+/* ── All Works (3-col) ── */
+.works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.07)}
+.work-card{background:var(--bg);overflow:hidden;position:relative;aspect-ratio:4/3;display:flex;flex-direction:column;justify-content:flex-end;cursor:none;text-decoration:none;color:inherit}
+
+/* ── shared image + overlay ── */
+.card-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1.2s var(--ease),filter 1.2s var(--ease);filter:brightness(.42) saturate(.75)}
+
+/* hover: neutral desaturated brighten — no colour tint */
+.project-card:hover .card-img,
+.work-card:hover .card-img{transform:scale(1.04);filter:brightness(.22) saturate(0)}
+
+.card-info{position:relative;z-index:2;padding:2.5rem;transform:translateY(8px);transition:transform .6s var(--ease)}
+.work-card .card-info{padding:1.8rem}
+.project-card:hover .card-info,
+.work-card:hover .card-info{transform:none}
+
+.card-num{font-size:.7rem;letter-spacing:.15em;color:rgba(255,255,255,.38);margin-bottom:.4rem}
+.card-name{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;line-height:1;margin-bottom:.5rem}
+.work-card .card-name{font-size:clamp(1.2rem,1.8vw,1.7rem)}
+.card-tag{font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+
+.card-arrow{position:absolute;top:2rem;right:2rem;width:44px;height:44px;border:1px solid rgba(255,255,255,.18);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transform:translate(6px,-6px);transition:opacity .4s,transform .4s var(--ease);z-index:2}
+.work-card .card-arrow{width:34px;height:34px;top:1.4rem;right:1.4rem}
+.project-card:hover .card-arrow,
+.work-card:hover .card-arrow{opacity:1;transform:none}
+.card-arrow svg{width:15px;height:15px;stroke:#fff;fill:none;stroke-width:1.5}
+.work-card .card-arrow svg{width:12px;height:12px}
+
+/* bg images — selected works */
+.bg-gajino{background-image:url('assets/images/gajino-meta.jpg')}
+.bg-bding{background-image:url('assets/images/bding-meta.jpg')}
+.bg-cheragh{background-image:url('assets/images/cheragh-meta.jpg')}
+.bg-iseema{background-image:url('assets/images/iseema-meta.jpg')}
+.bg-parkban{background-image:url('assets/images/parkban-meta.jpg')}
+.bg-nowzhin{background-image:url('assets/images/nowzhin-meta.jpg')}
+/* bg images — all works */
+.bg-zofachoob{background-image:url('assets/images/zofachoob-meta.jpg')}
+.bg-netwallet{background-image:url('assets/images/netwallet-meta.jpg')}
+.bg-kipaad{background-image:url('assets/images/kipaad-meta.jpg')}
+.bg-ghahreman{background-image:url('assets/images/ghahreman-meta.jpg')}
+.bg-mci{background-image:url('assets/images/mci-meta.jpg')}
+.bg-ibus{background-image:url('assets/images/ibus-meta.jpg')}
+.bg-usability{background-image:url('assets/images/usability-meta.jpg')}
+.bg-payvand{background-image:url('assets/images/payvand-meta.jpg')}
+.bg-mtn{background-image:url('assets/images/mtn-meta.jpg')}
+.bg-mns{background-image:url('assets/images/mns-meta.jpg')}
+.bg-logofolio{background-image:url('assets/images/logofolio-meta.gif')}
+.bg-museum{background-image:url('assets/images/museum-meta.jpg')}
+.bg-deco{background-image:url('assets/images/deco-meta.jpg')}
+.bg-sanazsania{background-image:url('assets/images/sanazsania-meta.jpg')}
+.bg-khobregan{background-image:url('assets/images/khobregan-meta.jpg')}
+.bg-vigrx{background-image:url('assets/images/vigrx-meta.jpg')}
+.bg-arghavan{background-image:url('assets/images/arghavan-meta.jpg')}
+.bg-mymy{background-image:url('assets/images/mymy-meta.jpg')}
+
+/* About */
+.about-strip{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start}
+.about-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:400;line-height:1.1;letter-spacing:-.02em}
+.about-title em{font-style:italic;font-weight:300}
+.about-body{color:var(--fg2);font-size:.9rem;line-height:1.9;max-width:420px}
+.about-body p{margin-bottom:1.25rem}
+.about-body strong{color:rgba(240,237,232,.7);font-weight:400}
+.services-list{margin-top:3rem;border-top:1px solid rgba(255,255,255,.08)}
+.service-item{padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.85rem;color:var(--fg2)}
+
+footer{padding:4rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center}
+.footer-email a{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.5vw,2rem);font-style:italic;color:var(--fg);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:2px;transition:border-color .3s}
+.footer-email a:hover{border-color:var(--fg)}
+.footer-social{display:flex;gap:2rem}
+.footer-social a{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--fg3);text-decoration:none;transition:color .3s}
+.footer-social a:hover{color:var(--fg)}
+.footer-copy{font-size:.72rem;color:var(--fg3);margin-top:.5rem}
+
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+#progress{position:fixed;top:0;left:0;height:1px;background:rgba(240,237,232,.4);z-index:200;transition:width .1s linear}
+
+@media(max-width:768px){
+  nav{padding:1.5rem}
+  #hero,section,footer{padding-left:1.5rem;padding-right:1.5rem}
+  .projects-grid,.works-grid{grid-template-columns:1fr}
+  .project-card.featured{grid-column:span 1}
+  .about-strip{grid-template-columns:1fr;gap:3rem}
+  body{cursor:auto}
+  #cursor,#cursor-ring{display:none}
+}
+</style>
 </head>
 <body>
 
-<!-- Analytics -->
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120217875-1"></script>
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<div id="progress"></div>
+
+<nav>
+  <a class="nav-logo" href="#">BMDX</a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <div class="hero-bg-text">BMDX</div>
+  <p class="hero-eyebrow">Senior Product Designer · 15+ Years · Tehran</p>
+  <h1 class="hero-title">
+    <span class="line">Mobin</span>
+    <span class="line"><em>Bahrami</em></span>
+  </h1>
+  <div class="hero-meta">
+    <p class="hero-desc">Purposeful design at the intersection of function and feeling.<br>Currently at <strong>Tosan</strong> — formerly <strong>Zabanshenas</strong>, <strong>Gaj</strong>, <strong>Fanap</strong>.</p>
+    <div class="hero-scroll"><span class="scroll-line"></span>Scroll to explore</div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span class="marquee-item">Product Design</span><span class="marquee-item">·</span>
+    <span class="marquee-item">Mobile</span><span class="marquee-item">·</span>
+    <span class="marquee-item">Branding</span><span class="marquee-item">·</span>
+    <span class="marquee-item">UX Strategy</span><span class="marquee-item">·</span>
+    <span class="marquee-item">Art Direction</span><span class="marquee-item">·</span>
+    <span class="marquee-item">Design Systems</span><span class="marquee-item">·</span>
+    <span class="marquee-item">Enterprise Fintech</span><span class="marquee-item">·</span>
+    <span class="marquee-item">Edtech</span><span class="marquee-item">·</span>
+    <span class="marquee-item">Product Design</span><span class="marquee-item">·</span>
+    <span class="marquee-item">Mobile</span><span class="marquee-item">·</span>
+    <span class="marquee-item">Branding</span><span class="marquee-item">·</span>
+    <span class="marquee-item">UX Strategy</span><span class="marquee-item">·</span>
+    <span class="marquee-item">Art Direction</span><span class="marquee-item">·</span>
+    <span class="marquee-item">Design Systems</span><span class="marquee-item">·</span>
+    <span class="marquee-item">Enterprise Fintech</span><span class="marquee-item">·</span>
+    <span class="marquee-item">Edtech</span><span class="marquee-item">·</span>
+  </div>
+</div>
+
+<!-- ── Selected Works ── -->
+<section id="work" style="padding-top:5rem;padding-bottom:0">
+  <p class="section-label reveal">Selected Work</p>
+</section>
+
+<div class="projects-grid">
+  <a class="project-card featured" href="gajino.html">
+    <div class="card-img bg-gajino"></div>
+    <div class="card-info"><p class="card-num">01</p><h2 class="card-name">Gajino</h2><p class="card-tag">Mobile App · Educational · Gaj Publications</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+  <a class="project-card" href="bding.html">
+    <div class="card-img bg-bding"></div>
+    <div class="card-info"><p class="card-num">02</p><h2 class="card-name">Bding</h2><p class="card-tag">Product Design · B2B · Full-cycle</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+  <a class="project-card" href="cheragh.html">
+    <div class="card-img bg-cheragh"></div>
+    <div class="card-info"><p class="card-num">03</p><h2 class="card-name">Cheragh</h2><p class="card-tag">Mobile App · Job Portal · Lifestyle</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+  <a class="project-card" href="iseema.html">
+    <div class="card-img bg-iseema"></div>
+    <div class="card-info"><p class="card-num">04</p><h2 class="card-name">Iseema</h2><p class="card-tag">Web Platform · TV &amp; Movie Streaming · SaaS</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+  <a class="project-card" href="parkban.html">
+    <div class="card-img bg-parkban"></div>
+    <div class="card-info"><p class="card-num">05</p><h2 class="card-name">Parkban</h2><p class="card-tag">Mobile App · NFC · Smart City</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+  <a class="project-card" href="nowzhin.html">
+    <div class="card-img bg-nowzhin"></div>
+    <div class="card-info"><p class="card-num">06</p><h2 class="card-name">Nowzhin</h2><p class="card-tag">Branding · Identity · Digital Studio</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+</div>
+
+<!-- ── More Works (all remaining, 3-col) ── -->
+<section style="padding-top:5rem;padding-bottom:0;padding-left:4rem;padding-right:4rem">
+  <p class="section-label reveal">More Works</p>
+</section>
+
+<div class="works-grid">
+
+  <a class="work-card" href="zofachoob.html">
+    <div class="card-img bg-zofachoob"></div>
+    <div class="card-info"><p class="card-num">2018</p><h3 class="card-name">Zofa Choob</h3><p class="card-tag">Logo · Website Redesign · E-Commerce</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+
+  <a class="work-card" href="netwallet.html">
+    <div class="card-img bg-netwallet"></div>
+    <div class="card-info"><p class="card-num">2016</p><h3 class="card-name">Net Wallet</h3><p class="card-tag">UX · UI Design · Fintech · Mobile</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+
+  <a class="work-card" href="kipaad.html">
+    <div class="card-img bg-kipaad"></div>
+    <div class="card-info"><p class="card-num">2016</p><h3 class="card-name">Kipaad</h3><p class="card-tag">Advertisement · Graphic Design · Banking</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+
+  <a class="work-card" href="ghahreman.html">
+    <div class="card-img bg-ghahreman"></div>
+    <div class="card-info"><p class="card-num">2014</p><h3 class="card-name">Ghahreman</h3><p class="card-tag">UX · UI · Character Design · Mobile Game</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+
+  <a class="work-card" href="mci.html">
+    <div class="card-img bg-mci"></div>
+    <div class="card-info"><p class="card-num">2014</p><h3 class="card-name">Ramezan-e Hamraah</h3><p class="card-tag">UX · UI · Mobile VAS · MCI</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+
+  <a class="work-card" href="ibus.html">
+    <div class="card-img bg-ibus"></div>
+    <div class="card-info"><p class="card-num">2015</p><h3 class="card-name">iBus</h3><p class="card-tag">UI Design · Logotype · Smart City · RTS</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+
+  <a class="work-card" href="usability.html">
+    <div class="card-img bg-usability"></div>
+    <div class="card-info"><p class="card-num">2015</p><h3 class="card-name">Sarava Usability</h3><p class="card-tag">UX Research · UI Design · E-Commerce</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+
+  <a class="work-card" href="payvand.html">
+    <div class="card-img bg-payvand"></div>
+    <div class="card-info"><p class="card-num">2015</p><h3 class="card-name">Payvand</h3><p class="card-tag">Magazine Ad · Copywriting · Fanap Payment</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+
+  <a class="work-card" href="mtn.html">
+    <div class="card-img bg-mtn"></div>
+    <div class="card-info"><p class="card-num">2013</p><h3 class="card-name">MTN Pishkhan</h3><p class="card-tag">Advertisement · Copywriting · MTN Irancell</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+
+  <a class="work-card" href="mns.html">
+    <div class="card-img bg-mns"></div>
+    <div class="card-info"><p class="card-num">2012</p><h3 class="card-name">MNS Characters</h3><p class="card-tag">Campaign · Character Design · MTN Irancell</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+
+  <a class="work-card" href="museum.html">
+    <div class="card-img bg-museum"></div>
+    <div class="card-info"><p class="card-num">2012</p><h3 class="card-name">Iran Furniture Museum</h3><p class="card-tag">Catalog Design · Print · Cultural</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+
+  <a class="work-card" href="deco.html">
+    <div class="card-img bg-deco"></div>
+    <div class="card-info"><p class="card-num">2012</p><h3 class="card-name">Deco</h3><p class="card-tag">Identity · Multimedia · UI Design · Conference</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+
+  <a class="work-card" href="logofolio.html">
+    <div class="card-img bg-logofolio"></div>
+    <div class="card-info"><p class="card-num">—</p><h3 class="card-name">Logofolio</h3><p class="card-tag">Logo Design · Selected Collection</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+
+  <a class="work-card" href="sanazsania.html">
+    <div class="card-img bg-sanazsania"></div>
+    <div class="card-info"><p class="card-num">2011</p><h3 class="card-name">Sanaz Sania</h3><p class="card-tag">Advertisement · Website Redesign · Cooking</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+
+  <a class="work-card" href="khobregan.html">
+    <div class="card-img bg-khobregan"></div>
+    <div class="card-info"><p class="card-num">2010</p><h3 class="card-name">Khobregan</h3><p class="card-tag">Graphic Design · Academic Institute</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+
+  <a class="work-card" href="vigrx.html">
+    <div class="card-img bg-vigrx"></div>
+    <div class="card-info"><p class="card-num">2010</p><h3 class="card-name">Vigrx</h3><p class="card-tag">Advertisement · Packaging · Medical</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+
+  <a class="work-card" href="arghavan.html">
+    <div class="card-img bg-arghavan"></div>
+    <div class="card-info"><p class="card-num">2008</p><h3 class="card-name">Arghavan</h3><p class="card-tag">Graphic Design · Store Boards · Collection</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+
+  <a class="work-card" href="mymy.html">
+    <div class="card-img bg-mymy"></div>
+    <div class="card-info"><p class="card-num">2003</p><h3 class="card-name">My My!</h3><p class="card-tag">Multimedia · UI Design · Personal</p></div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg></div>
+  </a>
+
+</div>
+
+<!-- ── About ── -->
+<section id="about">
+  <p class="section-label reveal">About</p>
+  <div class="about-strip reveal">
+    <div>
+      <h2 class="about-title">Design should be <em>purposeful,<br/>functional,</em><br/>and relevant.</h2>
+    </div>
+    <div>
+      <div class="about-body">
+        <p>I'm Mobin, a Senior Product Designer with 15+ years of experience across fintech, edtech, and consumer products — with a belief that the best design disappears, leaving only an experience that feels inevitable.</p>
+        <p>Specialized in product strategy, enterprise design systems, and user-centered experiences across web and mobile. Proven track record of leading cross-functional initiatives and scaling products used by millions.</p>
+        <p>Currently designing at <strong>Tosan</strong> (Yek App · Multi-Bank Platform). Previously <strong>Zabanshenas</strong>, <strong>Gaj / Gajino</strong>, <strong>Fanap</strong>, and <strong>Nowzhin Studio</strong>.</p>
+      </div>
+      <div class="services-list">
+        <div class="service-item">Product Design (Web / Mobile)</div>
+        <div class="service-item">Identity &amp; Branding</div>
+        <div class="service-item">Art &amp; Design Direction</div>
+        <div class="service-item">Consulting &amp; Design Review</div>
+        <div class="service-item">Graphic Design &amp; Print</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div>
+    <p class="section-label" style="margin-bottom:1.5rem">Let's work together</p>
+    <div class="footer-email"><a href="mailto:bmdx.info@gmail.com">bmdx.info@gmail.com</a></div>
+    <p class="footer-copy">©2026 BMDX · Mobin Bahrami</p>
+  </div>
+  <div class="footer-social">
+    <a href="https://linkedin.com/in/bmdx" target="_blank">LinkedIn</a>
+    <a href="https://dribbble.com/bmdx" target="_blank">Dribbble</a>
+    <a href="https://medium.com/@bmdx" target="_blank">Medium</a>
+    <a href="https://twitter.com/ibmdx" target="_blank">Twitter</a>
+  </div>
+</footer>
+
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-120217875-1');
+const cursor=document.getElementById('cursor'),ring=document.getElementById('cursor-ring'),prog=document.getElementById('progress');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px'});
+(function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing)})();
+document.querySelectorAll('a,.project-card,.work-card,.service-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cursor.classList.add('hover');ring.classList.add('hover')});
+  el.addEventListener('mouseleave',()=>{cursor.classList.remove('hover');ring.classList.remove('hover')});
+});
+window.addEventListener('scroll',()=>{
+  const s=document.documentElement,b=document.body;
+  const pct=(s.scrollTop||b.scrollTop)/((s.scrollHeight||b.scrollHeight)-s.clientHeight)*100;
+  prog.style.width=pct+'%';
+});
+window.addEventListener('load',()=>document.body.classList.add('loaded'));
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
-
-
-
-
-<!-- Hotjar Tracking Code for www.brmx.info -->
-<script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:912347,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
-<!-- /Analytics -->
-
-
-  <section class="menu cid-rVZMQWJxNP" once="menu" id="menu1-ou">
-
-    
-
-    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm bg-color transparent">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </button>
-        <div class="menu-logo">
-            <div class="navbar-brand">
-                <span class="navbar-logo">
-                    <a href="index.html">
-                         <img src="assets/images/bmdx-logomotion-smaller-1.gif" alt="BMDX Logomotion" title="Home" style="height: 3.8rem;">
-                    </a>
-                </span>
-                
-            </div>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
-                    <a class="nav-link link text-primary display-4" href="index.html"><strong>Work</strong></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link link text-primary display-4" href="about.html"><span style="font-weight: bold;"><br></span><strong>About</strong></a>
-                </li></ul>
-            
-        </div>
-    </nav>
-</section>
-
-<section class="engine"><a href="https://mobirise.info">Mobirise</a></section><section class="header9 cid-rYATSJrmxB mbr-parallax-background" id="header9-rb">
-
-    
-
-    <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);">
-    </div>
-
-    <div class="container">
-        <div class="media-container-column mbr-white">
-            <h1 class="mbr-section-title align-left mbr-bold pb-3 mbr-fonts-style display-1">
-<div><div><span style="font-size: 1rem;"><br><span style="font-size: 5.5rem;">Mobin Bahrami</span><br><span style="font-size: 3.5rem;">Product Designer <br><span style="font-size: 1.5rem;">Present <a color=blue href="https://play.google.com/store/apps/details?id=com.zabanshenas" target="_blank"><b><u>Zabanshenas</a></u><span style="font-size: 1.5rem;"> , Former <a href="https://play.google.com/store/apps/details?id=ir.gaj.gajino" target="_blank"><b><u>Gajino</a></u></b></div></h1>
-            
-            <p class="mbr-text align-left pb-3 mbr-fonts-style display-2"><span style="font-size: 2rem;">▼</span><br></p>
-            
-        </div>
-    </div>
-
-    
-</section>
-
-<section class="header9 cid-rW0qp3nbvx" id="header9-p8">
-
-    
-
-    
-<div class="container">
-        <div class="media-container-column mbr-white">
-            <h1 class="mbr-section-title align-left mbr-bold pb-3 mbr-fonts-style display-2">Selected Projects<br></h1>
-            
-            
-            
-        </div>
-    </div>
-
-    
-</section>
-
-<section class="cid-rYAUphnI5V mbr-parallax-background" id="header2-rc">
-
-    
-
-    <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(0, 0, 0);"></div>
-
-    <div class="container align-center">
-        <div class="row justify-content-md-center">
-            <div class="mbr-white col-md-10">
-                <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-2"></h1>
-                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-1">
-                    <a href="gajino.html" target="_blank" class="text-white"><strong><u>GAJINO</u></strong></a>
-                </h3>
-                
-                
-            </div>
-        </div>
-    </div>
-    
-</section>
-
-<section class="mbr-section info1 cid-rVZrjFXVyP" id="info1-on">
-
-    
-
-    
-    <div class="container">
-        <div class="row justify-content-center content-row">
-            <div class="media-container-column title col-12 col-lg-7 col-md-6">
-                
-                <h2 class="align-left mbr-bold mbr-fonts-style display-5"></h2>
-            </div>
-            <div class="media-container-column col-12 col-lg-3 col-md-4">
-                
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="cid-s1S88OFUJf mbr-parallax-background" id="header2-s1">
-
-    
-
-    <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(0, 0, 0);"></div>
-
-    <div class="container align-center">
-        <div class="row justify-content-md-center">
-            <div class="mbr-white col-md-10">
-                <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-2"></h1>
-                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-1"><a href="bding.html" target="_blank" class="text-white"><strong><u>BDING</u></strong></a></h3>
-                
-                
-            </div>
-        </div>
-    </div>
-    
-</section>
-
-<section class="mbr-section info1 cid-rVZysTS9L7" id="info1-os">
-
-    
-
-    
-    <div class="container">
-        <div class="row justify-content-center content-row">
-            <div class="media-container-column title col-12 col-lg-7 col-md-6">
-                
-                <h2 class="align-left mbr-bold mbr-fonts-style display-5"></h2>
-            </div>
-            <div class="media-container-column col-12 col-lg-3 col-md-4">
-                
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="cid-rYB5v8f7hk mbr-parallax-background" id="header2-re">
-
-    
-
-    <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(0, 0, 0);"></div>
-
-    <div class="container align-center">
-        <div class="row justify-content-md-center">
-            <div class="mbr-white col-md-10">
-                <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-2"></h1>
-                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-1"><a href="cheragh.html" target="_blank" class="text-white"><strong><u>CHERAGH</u></strong></a></h3>
-                
-                
-            </div>
-        </div>
-    </div>
-    
-</section>
-
-<section class="mbr-section info1 cid-rW0qK1zVxY" id="info1-p9">
-
-    
-
-    
-    <div class="container">
-        <div class="row justify-content-center content-row">
-            <div class="media-container-column title col-12 col-lg-7 col-md-6">
-                
-                <h2 class="align-left mbr-bold mbr-fonts-style display-5"></h2>
-            </div>
-            <div class="media-container-column col-12 col-lg-3 col-md-4">
-                
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="header9 cid-rW0dZWGLlM" id="header9-p4">
-
-    
-
-    
-
-    <div class="container">
-        <div class="media-container-column mbr-white">
-            <h1 class="mbr-section-title align-left mbr-bold pb-3 mbr-fonts-style display-2">More...<br></h1>
-            
-            
-            
-        </div>
-    </div>
-
-    
-</section>
-
-<section class="cid-rYB610vktS mbr-parallax-background" id="header2-rg">
-
-    
-
-    <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(0, 0, 0);"></div>
-
-    <div class="container align-center">
-        <div class="row justify-content-md-center">
-            <div class="mbr-white col-md-10">
-                <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-2"></h1>
-                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-1"><a href="iseema.html" class="text-white"><strong><u>ISEEMA</u></strong></a></h3>
-                
-                
-            </div>
-        </div>
-    </div>
-    
-</section>
-
-<section class="mbr-section info1 cid-rYB6oOyaS0" id="info1-rk">
-
-    
-
-    
-    <div class="container">
-        <div class="row justify-content-center content-row">
-            <div class="media-container-column title col-12 col-lg-7 col-md-6">
-                
-                <h2 class="align-left mbr-bold mbr-fonts-style display-5"></h2>
-            </div>
-            <div class="media-container-column col-12 col-lg-3 col-md-4">
-                
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="cid-rYB61pPcWo mbr-parallax-background" id="header2-rh">
-
-    
-
-    <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(0, 0, 0);"></div>
-
-    <div class="container align-center">
-        <div class="row justify-content-md-center">
-            <div class="mbr-white col-md-10">
-                <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-2"></h1>
-                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-1"><a href="parkban.html" class="text-white"><strong><u>PARKBAN</u></strong></a></h3>
-                
-                
-            </div>
-        </div>
-    </div>
-    
-</section>
-
-<section class="mbr-section info1 cid-rYB6pw9S0W" id="info1-rl">
-
-    
-
-    
-    <div class="container">
-        <div class="row justify-content-center content-row">
-            <div class="media-container-column title col-12 col-lg-7 col-md-6">
-                
-                <h2 class="align-left mbr-bold mbr-fonts-style display-5"></h2>
-            </div>
-            <div class="media-container-column col-12 col-lg-3 col-md-4">
-                
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="cid-rYB61NFi0d mbr-parallax-background" id="header2-ri">
-
-    
-
-    <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(0, 0, 0);"></div>
-
-    <div class="container align-center">
-        <div class="row justify-content-md-center">
-            <div class="mbr-white col-md-10">
-                <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-2"></h1>
-                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-1"><a href="nowzhin.html" class="text-white"><strong><u>NOWZHIN</u></strong></a></h3>
-                
-                
-            </div>
-        </div>
-    </div>
-    
-</section>
-
-<section class="mbr-section info1 cid-rYB6pXneN9" id="info1-rm">
-
-    
-
-    
-    <div class="container">
-        <div class="row justify-content-center content-row">
-            <div class="media-container-column title col-12 col-lg-7 col-md-6">
-                
-                <h2 class="align-left mbr-bold mbr-fonts-style display-5"></h2>
-            </div>
-            <div class="media-container-column col-12 col-lg-3 col-md-4">
-                
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="cid-rYB62jTeBK mbr-parallax-background" id="header2-rj">
-
-    
-
-    <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(0, 0, 0);"></div>
-
-    <div class="container align-center">
-        <div class="row justify-content-md-center">
-            <div class="mbr-white col-md-10">
-                <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-2"></h1>
-                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-1"><a href="zofachoob.html" class="text-white"><strong><u>ZOFACHOOB</u></strong></a></h3>
-                
-                
-            </div>
-        </div>
-    </div>
-    
-</section>
-
-<section class="mbr-section info1 cid-rW8TwMqKXS" id="info1-pu">
-
-    
-
-    
-    <div class="container">
-        <div class="row justify-content-center content-row">
-            <div class="media-container-column title col-12 col-lg-7 col-md-6">
-                
-                <h2 class="align-left mbr-bold mbr-fonts-style display-5"><br><br><br><br></h2>
-            </div>
-            <div class="media-container-column col-12 col-lg-3 col-md-4">
-                
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="header9 cid-rW33U3npV5 mbr-parallax-background" id="header9-pr">
-
-    
-
-    <div class="mbr-overlay" style="opacity: 0; background-color: rgb(0, 0, 0);">
-    </div>
-
-    <div class="container">
-        <div class="media-container-column mbr-white">
-            <h1 class="mbr-section-title align-left mbr-bold pb-3 mbr-fonts-style display-1">Still?<br></h1>
-            <h3 class="mbr-section-subtitle align-left mbr-light pb-3 mbr-fonts-style display-5"><span style="font-style: normal;">Check out &nbsp;<u><a href="works.html" class="text-success"><strong>Older Works</strong></a></u>&nbsp; or &nbsp;<a href="https://dribbble.com/bmdx" target="_blank" class="text-success"><strong><u>Dribbble</u></strong></a></span><span style="font-style: normal;"><br></span></h3>
-            
-            
-        </div>
-    </div>
-
-    
-</section>
-
-<section class="mbr-section info1 cid-rW8TxH12oe" id="info1-pv">
-
-    
-
-    
-    <div class="container">
-        <div class="row justify-content-center content-row">
-            <div class="media-container-column title col-12 col-lg-7 col-md-6">
-                
-                <h2 class="align-left mbr-bold mbr-fonts-style display-5"></h2>
-            </div>
-            <div class="media-container-column col-12 col-lg-3 col-md-4">
-                
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="counters6 counters cid-rTAP9vMHe9" id="counters6-o9">
-
-    
-
-    
-
-    </b><div class="container pt-4 mt-2">
-        <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-1"><strong>Curtain Line</strong><strong><br></strong></h2>
-        <h3 class="mbr-section-subtitle pb-5 align-center mbr-fonts-style display-5">What can I do for you?<br><br><br><br></h3>
-        <div>
-                <div class="cards-container">
-                    <div class="card col-12 col-md-6 col-lg-4 pb-md-4">
-                        <div class="panel-item align-center">
-                            <div class="card-img pb-3">
-                                <h3 class="img-text mbr-fonts-style display-5"><strong><br></strong><strong>Services</strong></h3>
-                            </div>
-                            <div class="card-text">
-                                <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7"></h4>
-                                <p class="mbr-content-text mbr-fonts-style display-7">Product Design (Web / Mobile)<br>Identity / Branding<br>Art & Design Direction<br>Consulting &amp; Design Review<br>Graphic Design &amp; Print</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card col-12 col-md-6 col-lg-4 pb-md-4">
-                        <div class="panel-item align-center">
-                            <div class="card-img pb-3">
-                                <h3 class="img-text mbr-fonts-style display-5"><strong><br></strong><strong>Contact</strong></h3>
-                            </div>
-                            <div class="card-text">
-                                <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7"></h4>
-                                <p class="mbr-content-text mbr-fonts-style display-7">Drop a line to<br><a href="mailto:bmdx.info@gmail.com" class="text-success"><strong><u>bmdx.info@gmail.com</u></strong></a></p><p><a href="mailto:hi@bmdx.info"></a></p><p></p><p></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card col-12 col-md-6 col-lg-4 last-child">
-                        <div class="panel-item align-center">
-                            <div class="card-img pb-3">
-                                <h3 class="img-text mbr-fonts-style display-5"><strong><br></strong><strong>Social</strong></h3>
-                            </div>
-                            <div class="card-text">
-                                <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7"></h4>
-                                <p class="mbr-content-text mbr-fonts-style display-7"><a href="https://linkedin.com/in/bmdx" target="_blank" class="text-success"><strong><u>Linkedin</u></strong></a><br><a href="https://medium.com/@bmdx" target="_blank" class="text-success"><strong><u>Medium</u></strong></a><br><a href="https://dribbble.com/bmdx" target="_blank" class="text-success"><strong><u>Dribbble</u></strong></a><br><a href="https://twitter.com/ibmdx" target="_blank" class="text-success"><strong><u>Twitter</u></strong></a><br></p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-    </div>
-</section>
-
-<section once="" class="cid-qUCqvigvoG" id="footer7-4v">
-
-    
-
-    
-
-    <div class="container">
-        <div class="media-container-row align-center mbr-white">
-            
-            
-            <div class="row row-copirayt">
-                <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-4"></p><p><span style="font-size: 1rem; background-color: rgb(0, 0, 0);"><a href="https://linkedin.com/company/bmdx" target="_blank" class="text-info">©</a> by&nbsp;</span><span style="font-size: 1rem;"><a href="http://www.bmdx.info" class="text-info">BMDX</a></span></p><p>Thanks for scrolling!<br><br></p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-  <script src="assets/web/assets/jquery/jquery.min.js"></script>
-  <script src="assets/popper/popper.min.js"></script>
-  <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"></script>
-  <script src="https://apis.google.com/js/plusone.js"></script>
-  <script src="assets/facebook-plugin/facebook-script.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/smoothscroll/smooth-scroll.js"></script>
-  <script src="assets/tether/tether.min.js"></script>
-  <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
-  <script src="assets/dropdown/js/nav-dropdown.js"></script>
-  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
-  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
-  <script src="assets/parallax/jarallax.min.js"></script>
-  <script src="assets/theme/js/script.js"></script>
-  
-  
- <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
-    <input name="animation" type="hidden">
-  
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T7TR7GC"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 </body>
 </html>
