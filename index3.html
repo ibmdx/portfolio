@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Mobin Bahrami — BMDX · Product Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,300&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0a;--bg2:#111;--bg3:#161616;
+  --fg:#f0ede8;--fg2:#888;--fg3:#555;
+  --accent:#f0ede8;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:'Inter',sans-serif;font-size:15px;line-height:1.6;overflow-x:hidden;cursor:none}
+
+/* Custom cursor */
+#cursor{position:fixed;width:10px;height:10px;background:var(--fg);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .15s var(--ease),background .2s,width .2s,height .2s}
+#cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(240,237,232,.35);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .35s var(--ease),width .3s,height .3s,opacity .3s}
+body:hover #cursor-ring{opacity:1}
+#cursor.hover{width:6px;height:6px;background:#fff}
+#cursor-ring.hover{width:56px;height:56px;border-color:rgba(240,237,232,.6)}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:2rem 4rem;mix-blend-mode:difference}
+.nav-logo{font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;letter-spacing:.02em;color:#fff;text-decoration:none}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;transition:color .3s}
+.nav-links a:hover{color:#fff}
+
+/* Hero */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:3rem 4rem 4rem;position:relative;overflow:hidden}
+.hero-bg-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:22vw;font-weight:600;color:rgba(255,255,255,.018);letter-spacing:-.05em;white-space:nowrap;pointer-events:none;user-select:none}
+.hero-eyebrow{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--fg2);margin-bottom:1.5rem;opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,8vw,7rem);font-weight:400;line-height:1;letter-spacing:-.02em;margin-bottom:2rem;overflow:hidden}
+.hero-title .line{display:block;opacity:0;transform:translateY(110%);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.hero-title .line em{font-style:italic;font-weight:300}
+.hero-meta{display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.hero-desc{font-size:.85rem;color:var(--fg2);max-width:340px;line-height:1.7}
+.hero-desc strong{color:rgba(240,237,232,.75);font-weight:400}
+.hero-scroll{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--fg3);display:flex;align-items:center;gap:.75rem}
+.scroll-line{width:48px;height:1px;background:var(--fg3);display:inline-block;transition:width .4s var(--ease)}
+.hero-scroll:hover .scroll-line{width:72px}
+.loaded .hero-eyebrow,.loaded .hero-meta{opacity:1;transform:none}
+.loaded .hero-title .line{opacity:1;transform:none}
+.loaded .hero-title .line:nth-child(1){transition-delay:.1s}
+.loaded .hero-title .line:nth-child(2){transition-delay:.22s}
+
+/* Marquee */
+.marquee-wrap{border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);padding:.75rem 0;overflow:hidden;white-space:nowrap}
+.marquee-inner{display:inline-flex;gap:4rem;animation:marquee 22s linear infinite}
+.marquee-item{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--fg3)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* Section */
+section{padding:8rem 4rem}
+.section-label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--fg3);margin-bottom:4rem;display:flex;align-items:center;gap:1rem}
+.section-label::before{content:'';width:24px;height:1px;background:var(--fg3)}
+
+/* Projects Grid */
+.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.07);margin-top:0}
+.project-card{background:var(--bg);overflow:hidden;position:relative;aspect-ratio:4/3;display:flex;flex-direction:column;justify-content:flex-end;cursor:none}
+.project-card.featured{grid-column:span 2;aspect-ratio:16/7}
+.project-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1.2s var(--ease),filter 1.2s var(--ease);filter:brightness(.45) saturate(.8)}
+.project-card:hover .project-img{transform:scale(1.04);filter:brightness(.3) saturate(.5)}
+.project-color-overlay{position:absolute;inset:0;opacity:0;transition:opacity .8s var(--ease);mix-blend-mode:color}
+.project-card:hover .project-color-overlay{opacity:.18}
+.project-info{position:relative;z-index:2;padding:2.5rem;transform:translateY(8px);transition:transform .6s var(--ease)}
+.project-card:hover .project-info{transform:none}
+.project-num{font-size:.7rem;letter-spacing:.15em;color:rgba(255,255,255,.4);margin-bottom:.5rem}
+.project-name{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;line-height:1;margin-bottom:.6rem}
+.project-tag{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.project-arrow{position:absolute;top:2rem;right:2rem;width:44px;height:44px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transform:translate(6px,-6px);transition:opacity .4s,transform .4s var(--ease),border-color .3s;z-index:2}
+.project-card:hover .project-arrow{opacity:1;transform:none}
+.project-arrow svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:1.5}
+
+/* Project backgrounds — relative paths for local / GitHub Pages root */
+.bg-gajino{background-image:url('assets/images/gajino-meta.jpg')}
+.bg-bding{background-image:url('assets/images/bding-meta.jpg')}
+.bg-cheragh{background-image:url('assets/images/cheragh-meta.jpg')}
+.bg-iseema{background-image:url('assets/images/iseema-meta.jpg')}
+.bg-parkban{background-image:url('assets/images/parkban-meta.jpg')}
+.bg-nowzhin{background-image:url('assets/images/nowzhin-meta.jpg')}
+
+/* Color overlays per project */
+.ov-gajino{background:#7c3aed}
+.ov-bding{background:#2563eb}
+.ov-cheragh{background:#ea580c}
+.ov-iseema{background:#0d9488}
+.ov-parkban{background:#16a34a}
+.ov-nowzhin{background:#db2777}
+
+/* About strip */
+.about-strip{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start}
+.about-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:400;line-height:1.1;letter-spacing:-.02em}
+.about-title em{font-style:italic;font-weight:300}
+.about-body{color:var(--fg2);font-size:.9rem;line-height:1.9;max-width:420px}
+.about-body p{margin-bottom:1.25rem}
+.about-body strong{color:rgba(240,237,232,.7);font-weight:400}
+.services-list{margin-top:3rem;border-top:1px solid rgba(255,255,255,.08)}
+.service-item{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.85rem;color:var(--fg2)}
+
+/* Footer */
+footer{padding:4rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center}
+.footer-email a{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.5vw,2rem);font-style:italic;color:var(--fg);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:2px;transition:border-color .3s}
+.footer-email a:hover{border-color:var(--fg)}
+.footer-social{display:flex;gap:2rem}
+.footer-social a{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--fg3);text-decoration:none;transition:color .3s}
+.footer-social a:hover{color:var(--fg)}
+.footer-copy{font-size:.72rem;color:var(--fg3);margin-top:.5rem}
+
+/* Animate on scroll */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+
+/* Progress bar */
+#progress{position:fixed;top:0;left:0;height:1px;background:rgba(240,237,232,.4);z-index:200;transition:width .1s linear}
+
+@media(max-width:768px){
+  nav{padding:1.5rem 1.5rem}
+  #hero,section,footer{padding-left:1.5rem;padding-right:1.5rem}
+  .projects-grid{grid-template-columns:1fr}
+  .project-card.featured{grid-column:span 1}
+  .about-strip{grid-template-columns:1fr;gap:3rem}
+  body{cursor:auto}
+  #cursor,#cursor-ring{display:none}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<div id="progress"></div>
+
+<nav>
+  <a class="nav-logo" href="#">BMDX</a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <div class="hero-bg-text">BMDX</div>
+  <p class="hero-eyebrow">Senior Product Designer · 15+ Years · Tehran</p>
+  <h1 class="hero-title">
+    <span class="line">Mobin</span>
+    <span class="line"><em>Bahrami</em></span>
+  </h1>
+  <div class="hero-meta">
+    <p class="hero-desc">Purposeful design at the intersection of function and feeling.<br>Currently at <strong>Tosan</strong> — formerly <strong>Zabanshenas</strong>, <strong>Gaj</strong>, <strong>Fanap</strong>.</p>
+    <div class="hero-scroll">
+      <span class="scroll-line"></span>
+      Scroll to explore
+    </div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span class="marquee-item">Product Design</span>
+    <span class="marquee-item">·</span>
+    <span class="marquee-item">Mobile</span>
+    <span class="marquee-item">·</span>
+    <span class="marquee-item">Branding</span>
+    <span class="marquee-item">·</span>
+    <span class="marquee-item">UX Strategy</span>
+    <span class="marquee-item">·</span>
+    <span class="marquee-item">Art Direction</span>
+    <span class="marquee-item">·</span>
+    <span class="marquee-item">Design Systems</span>
+    <span class="marquee-item">·</span>
+    <span class="marquee-item">Enterprise Fintech</span>
+    <span class="marquee-item">·</span>
+    <span class="marquee-item">Edtech</span>
+    <span class="marquee-item">·</span>
+    <span class="marquee-item">Product Design</span>
+    <span class="marquee-item">·</span>
+    <span class="marquee-item">Mobile</span>
+    <span class="marquee-item">·</span>
+    <span class="marquee-item">Branding</span>
+    <span class="marquee-item">·</span>
+    <span class="marquee-item">UX Strategy</span>
+    <span class="marquee-item">·</span>
+    <span class="marquee-item">Art Direction</span>
+    <span class="marquee-item">·</span>
+    <span class="marquee-item">Design Systems</span>
+    <span class="marquee-item">·</span>
+    <span class="marquee-item">Enterprise Fintech</span>
+    <span class="marquee-item">·</span>
+    <span class="marquee-item">Edtech</span>
+    <span class="marquee-item">·</span>
+  </div>
+</div>
+
+<section id="work" style="padding-top:5rem;padding-bottom:0">
+  <p class="section-label reveal">Selected Work</p>
+</section>
+
+<div class="projects-grid">
+
+  <a class="project-card featured" href="gajino.html" style="text-decoration:none;color:inherit">
+    <div class="project-img bg-gajino"></div>
+    <div class="project-color-overlay ov-gajino"></div>
+    <div class="project-info">
+      <p class="project-num">01</p>
+      <h2 class="project-name">Gajino</h2>
+      <p class="project-tag">Mobile App · Educational · Gaj Publications</p>
+    </div>
+    <div class="project-arrow">
+      <svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg>
+    </div>
+  </a>
+
+  <a class="project-card" href="bding.html" style="text-decoration:none;color:inherit">
+    <div class="project-img bg-bding"></div>
+    <div class="project-color-overlay ov-bding"></div>
+    <div class="project-info">
+      <p class="project-num">02</p>
+      <h2 class="project-name">Bding</h2>
+      <p class="project-tag">Product Design · B2B</p>
+    </div>
+    <div class="project-arrow">
+      <svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg>
+    </div>
+  </a>
+
+  <a class="project-card" href="cheragh.html" style="text-decoration:none;color:inherit">
+    <div class="project-img bg-cheragh"></div>
+    <div class="project-color-overlay ov-cheragh"></div>
+    <div class="project-info">
+      <p class="project-num">03</p>
+      <h2 class="project-name">Cheragh</h2>
+      <p class="project-tag">Mobile App · Lifestyle</p>
+    </div>
+    <div class="project-arrow">
+      <svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg>
+    </div>
+  </a>
+
+  <a class="project-card" href="iseema.html" style="text-decoration:none;color:inherit">
+    <div class="project-img bg-iseema"></div>
+    <div class="project-color-overlay ov-iseema"></div>
+    <div class="project-info">
+      <p class="project-num">04</p>
+      <h2 class="project-name">Iseema</h2>
+      <p class="project-tag">Web Platform · SaaS</p>
+    </div>
+    <div class="project-arrow">
+      <svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg>
+    </div>
+  </a>
+
+  <a class="project-card" href="parkban.html" style="text-decoration:none;color:inherit">
+    <div class="project-img bg-parkban"></div>
+    <div class="project-color-overlay ov-parkban"></div>
+    <div class="project-info">
+      <p class="project-num">05</p>
+      <h2 class="project-name">Parkban</h2>
+      <p class="project-tag">Mobile App · Smart City</p>
+    </div>
+    <div class="project-arrow">
+      <svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg>
+    </div>
+  </a>
+
+  <a class="project-card" href="nowzhin.html" style="text-decoration:none;color:inherit">
+    <div class="project-img bg-nowzhin"></div>
+    <div class="project-color-overlay ov-nowzhin"></div>
+    <div class="project-info">
+      <p class="project-num">06</p>
+      <h2 class="project-name">Nowzhin</h2>
+      <p class="project-tag">Branding · Identity · Digital Studio</p>
+    </div>
+    <div class="project-arrow">
+      <svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="8 5 19 5 19 16"/></svg>
+    </div>
+  </a>
+
+</div>
+
+<section id="about">
+  <p class="section-label reveal">About</p>
+  <div class="about-strip reveal">
+    <div>
+      <h2 class="about-title">Design should be <em>purposeful,<br/>functional,</em><br/>and relevant.</h2>
+    </div>
+    <div>
+      <div class="about-body">
+        <p>I'm Mobin, a Senior Product Designer with 15+ years of experience across fintech, edtech, and consumer products — with a belief that the best design disappears, leaving only an experience that feels inevitable.</p>
+        <p>Specialized in product strategy, enterprise design systems, and user-centered experiences across web and mobile. Proven track record of leading cross-functional initiatives and scaling products used by millions.</p>
+        <p>Currently designing at <strong>Tosan</strong> (Yek App · Multi-Bank Platform). Previously <strong>Zabanshenas</strong>, <strong>Gaj / Gajino</strong>, <strong>Fanap</strong>, and <strong>Nowzhin Studio</strong>.</p>
+      </div>
+      <div class="services-list">
+        <div class="service-item"><span>Product Design (Web / Mobile)</span></div>
+        <div class="service-item"><span>Identity &amp; Branding</span></div>
+        <div class="service-item"><span>Art &amp; Design Direction</span></div>
+        <div class="service-item"><span>Consulting &amp; Design Review</span></div>
+        <div class="service-item"><span>Graphic Design &amp; Print</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div>
+    <p class="section-label" style="margin-bottom:1.5rem">Let's work together</p>
+    <div class="footer-email">
+      <a href="mailto:bmdx.info@gmail.com">bmdx.info@gmail.com</a>
+    </div>
+    <p class="footer-copy">©2026 BMDX · Mobin Bahrami</p>
+  </div>
+  <div class="footer-social">
+    <a href="https://linkedin.com/in/bmdx" target="_blank">LinkedIn</a>
+    <a href="https://dribbble.com/bmdx" target="_blank">Dribbble</a>
+    <a href="https://medium.com/@bmdx" target="_blank">Medium</a>
+    <a href="https://twitter.com/ibmdx" target="_blank">Twitter</a>
+  </div>
+</footer>
+
+<script>
+const cursor=document.getElementById('cursor'),ring=document.getElementById('cursor-ring'),prog=document.getElementById('progress');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px'});
+(function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing)})();
+document.querySelectorAll('a,.project-card,.service-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cursor.classList.add('hover');ring.classList.add('hover')});
+  el.addEventListener('mouseleave',()=>{cursor.classList.remove('hover');ring.classList.remove('hover')});
+});
+window.addEventListener('scroll',()=>{
+  const s=document.documentElement,b=document.body;
+  const pct=(s.scrollTop||b.scrollTop)/((s.scrollHeight||b.scrollHeight)-s.clientHeight)*100;
+  prog.style.width=pct+'%';
+});
+window.addEventListener('load',()=>document.body.classList.add('loaded'));
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
